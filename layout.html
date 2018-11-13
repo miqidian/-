@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>双飞翼布局的几种方式</title>
+    <style media="screen">
+      html *{
+        margin:0;
+        padding:0;
+      }
+      .layout{
+        height:200px;
+        background:yellow;
+        margin-bottom:20px;
+        color:#fff;
+        font-size:22px;
+        line-height:200px;
+        text-align:center;
+      }
+      /*float布局*/
+      .float div{
+        height:200px;
+      }
+      .float div.left{
+        background:red;
+        float:left;
+        width:300px;
+      }
+      .float div.middle{
+        background:#000;
+      }
+      .float div.right{
+        background:green;
+        float:right;
+        width:300px;
+      }
+      /*position 布局*/
+      .layout{
+        position: relative;
+      }
+      .position div{
+        height:200px;
+      }
+      .position div.left{
+        position: absolute;
+        background:red;
+        width:300px;
+        left:0;
+        top:0;
+      }
+      .position div.middle{
+        position: absolute;
+        background:#000;
+        right:300px;
+        top:0;
+        left:300px;
+      }
+      .position div.right{
+        position: absolute;
+        background:green;
+        width:300px;
+        right:0;
+        top:0;
+      }
+
+      /*table-cell布局*/
+      .table-cell{
+        display:table;
+        width:100%;
+      }
+      .table-cell div{
+        height:200px;
+        display:table-cell;
+      }
+      .table-cell div.left{
+        width:300px;
+        background:red;
+      }
+      .table-cell div.middle{
+        background:#000;
+      }
+      .table-cell div.right{
+        width:300px;
+        background:green;
+      }
+
+      /*flex 布局*/
+      .flex{
+        display:flex;
+      }
+      .flex div{
+        height:200px;
+      }
+      .flex div.left{
+        background:red;
+        width:300px;
+      }
+      .flex div.right{
+        width:300px;
+        background:green;
+      }
+      .flex div.middle{
+        background:#000;
+        flex:1;
+      }
+
+      /*grid 网格布局*/
+      .grid{
+        display:grid;
+        grid-template-columns: 300px auto 300px;
+      }
+      .grid div.left{
+        background:red;
+      }
+      .grid div.middle{
+        background:#000;
+      }
+      .grid div.right{
+        background:green;
+      }
+    </style>
+  </head>
+  <body>
+      <!--float布局-->
+      <article class="float layout">
+        <div class="left">float布局-left</div>
+        <div class="right">float布局-right</div>
+        <div class="middle">float布局-middle</div>
+      </article>
+
+      <!--position布局-->
+      <article class="position layout">
+        <div class="left">position布局-left</div>
+        <div class="middle">position布局-middle</div>
+        <div class="right">position布局-right</div>
+      </article>
+
+      <!--table-cell布局-->
+      <article class="table-cell layout">
+        <div class="left">table-cell布局-left</div>
+        <div class="middle">table-cell布局-middle</div>
+        <div class="right">table-cell布局-right</div>
+      </article>
+
+      <!--flex布局-->
+      <article class="flex layout">
+        <div class="left">flex布局-left</div>
+        <div class="middle">flex布局-middle</div>
+        <div class="right">flex布局-right</div>
+      </article>
+
+      <!--grid网格布局-->
+      <article class="grid layout">
+        <div class="left">grid网格布局-left</div>
+        <div class="middle">grid网格布局-middle</div>
+        <div class="right">grid网格布局-right</div>
+      </article>
+  </body>
+</html>
